@@ -20,4 +20,24 @@ describe("Employee", () => {
 
         expect(employee.getName()).toEqual(name);
     });
+
+    describe("getId", () => {
+        const id = 69;
+        const employee = new Employee("Big Chungus", id, "turnedHimselfIntoAPickle@gmail.com");
+
+        expect(employee.getId()).toEqual(id);
+    });
+
+    describe("getEmail", () => {
+        const email = "s.e.baka@gmail.com";
+        const employee = new Employee("Sus E. Baka", 420, email);
+
+        expect(employee.getEmail()).toEqual(email);
+    });
+
+    describe("getRole", () => {
+        const employee = new Employee("Shelbert Nelburshnelson", 1, "shelbert.n@gmail.com");
+
+        expect(employee.getRole()).toEqual("Employee");
+    });
 });
