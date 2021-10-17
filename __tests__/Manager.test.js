@@ -1,4 +1,4 @@
-const Manager = include("../lib/Manager.js");
+const Manager = require("../lib/Manager.js");
 
 describe("Manager", () => {
     describe("constructor", () => {
