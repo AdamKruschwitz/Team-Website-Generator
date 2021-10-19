@@ -1,7 +1,15 @@
 
 function _generateIcon(employee) {
-    //TODO
-    return "";
+    switch(employee.getRole()) {
+        case "Manager": 
+            return `<i class="bi bi-cup-fill pe-2"></i>`
+        case "Engineer": 
+            return `<i class="bi bi-gear-wide"></i>`
+        case "Intern": 
+            return `<i class="bi bi-book"></i>`
+        default:
+            return `<i class="bi bi-eyeglasses"></i>`
+    }
 }
 
 function _generateCard(employee) {
