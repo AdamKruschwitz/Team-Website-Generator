@@ -1,14 +1,43 @@
 
 function _generateIcon(employee) {
     //TODO
+    return "";
 }
 
 function _generateCard(employee) {
-    return ""
+    let icon = _generateIcon(employee);
+    let cardStart = `<div class="col-12 col-md-6 col-xl-3">
+    <article class="card p-0 shadow">
+        <div class="card-body  bg-primary text-white">
+            <h2 class="card-title">${employee.getName()}</h2> 
+            <h3 class="lead">${icon}${employee.getRole()}</h3>
+        </div>
+        <div class="card-body bg-grey">
+            <ul class="list-group">
+                <li class="list-group-item">ID: ${employee.getId()}</li>
+                <li class="list-group-item">Email: ${employee.getEmail()}</li>`
+    let cardEnd = `
+    </ul>
+</div>
+</article>
+</div>`;
+    let specialItem = "";
+    switch(employee.getRole()) {
+        case "Manager":
+            specialItem = `<li class="list-group-item">Office number: ${employee.officeNumber}</li>`;
+            break;
+        case "Engineer":
+            specialItem = `<li class="list-group-item">GitHub: ${employee.getGithub()}</li>`;
+            break;
+        case "Intern":
+            specialItem = `<li class="list-group-item">School: ${employee.getSchool()}</li>`
+    }
+
+    return cardStart + specialItem + cardEnd;
 }
 
 function generateWebsite(employees) {
-    console.log("generating html based off data:", data);
+    console.log("generating html based off data:", employees);
 
     let htmlStart = `<!DOCTYPE html>
 <html lang="en">
@@ -36,7 +65,7 @@ function generateWebsite(employees) {
 </html>`
     let cards = ""
     for(let employee of employees) {
-        cards += _generateCard(employee) += "\n\n";
+        cards += _generateCard(employee) + "\n\n";
     }
     return htmlStart + cards + htmlEnd;
 }
