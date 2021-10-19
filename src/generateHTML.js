@@ -4,41 +4,42 @@ function _generateIcon(employee) {
         case "Manager": 
             return `<i class="bi bi-cup-fill pe-2"></i>`
         case "Engineer": 
-            return `<i class="bi bi-gear-wide"></i>`
+            return `<i class="bi bi-gear-wide pe-2"></i>`
         case "Intern": 
-            return `<i class="bi bi-book"></i>`
+            return `<i class="bi bi-book pe-2"></i>`
         default:
-            return `<i class="bi bi-eyeglasses"></i>`
+            return `<i class="bi bi-eyeglasses pe-2"></i>`
     }
 }
 
 function _generateCard(employee) {
     let icon = _generateIcon(employee);
-    let cardStart = `<div class="col-12 col-md-6 col-xl-3">
-    <article class="card p-0 shadow">
-        <div class="card-body  bg-primary text-white">
-            <h2 class="card-title">${employee.getName()}</h2> 
-            <h3 class="lead">${icon}${employee.getRole()}</h3>
-        </div>
-        <div class="card-body bg-grey">
-            <ul class="list-group">
-                <li class="list-group-item">ID: ${employee.getId()}</li>
-                <li class="list-group-item">Email: ${employee.getEmail()}</li>`
+    let cardStart = `
+            <div class="col-12 col-md-6 col-xl-3">
+                <article class="card p-0 shadow">
+                    <div class="card-body  bg-primary text-white">
+                        <h2 class="card-title">${employee.getName()}</h2> 
+                        <h3 class="lead">${icon}${employee.getRole()}</h3>
+                    </div>
+                    <div class="card-body bg-grey">
+                        <ul class="list-group">
+                            <li class="list-group-item">ID: ${employee.getId()}</li>
+                            <li class="list-group-item">Email: ${employee.getEmail()}</li>`
     let cardEnd = `
-    </ul>
-</div>
-</article>
-</div>`;
+                        </ul>
+                    </div>
+                </article>
+            </div>`;
     let specialItem = "";
     switch(employee.getRole()) {
         case "Manager":
-            specialItem = `<li class="list-group-item">Office number: ${employee.officeNumber}</li>`;
+            specialItem = `                         <li class="list-group-item">Office number: ${employee.officeNumber}</li>`;
             break;
         case "Engineer":
-            specialItem = `<li class="list-group-item">GitHub: ${employee.getGithub()}</li>`;
+            specialItem = `                         <li class="list-group-item">GitHub: ${employee.getGithub()}</li>`;
             break;
         case "Intern":
-            specialItem = `<li class="list-group-item">School: ${employee.getSchool()}</li>`
+            specialItem = `                         <li class="list-group-item">School: ${employee.getSchool()}</li>`
     }
 
     return cardStart + specialItem + cardEnd;
