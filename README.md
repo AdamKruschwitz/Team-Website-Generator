@@ -21,6 +21,8 @@ Run ```node index.js``` to start the program. When finished, the output can be f
 ## Program Tests
 run ```npm run test``` to run this packages test suite.
 
+## Link to Demo video [here](https://watch.screencastify.com/v/OVwOOIJLlJJNgVqjJK2j)
+
 ## License
 ![License](https://licensebuttons.net/l/zero/1.0/80x15.png)
 
