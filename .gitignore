@@ -1,2 +1,4 @@
 node_modules/
 .VS_Studio/
+
+dist/
