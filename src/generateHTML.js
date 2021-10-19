@@ -24,7 +24,8 @@ function _generateCard(employee) {
                     <div class="card-body bg-grey">
                         <ul class="list-group">
                             <li class="list-group-item">ID: ${employee.getId()}</li>
-                            <li class="list-group-item">Email: ${employee.getEmail()}</li>`
+                            <li class="list-group-item">Email: ${employee.getEmail()}</li>
+`
     let cardEnd = `
                         </ul>
                     </div>
